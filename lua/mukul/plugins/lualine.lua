@@ -5,7 +5,7 @@ return {
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
-		local colors = {
+		local tokyonight_colors = {
 			blue = "#65D1FF",
 			green = "#3EFFDC",
 			violet = "#FF61EF",
@@ -16,36 +16,61 @@ return {
 			inactive_bg = "#2c3043",
 		}
 
+		local catppuccin_colors = {
+			rosewater = "#f5e0dc",
+			flamingo = "#f2cdcd",
+			mauve = "#cba6f7",
+			pink = "#f5c2e7",
+			red = "#f38ba8",
+			maroon = "#eba0ac",
+			peach = "#fab387",
+			yellow = "#f9e2af",
+			green = "#a6e3a1",
+			teal = "#94e2d5",
+			sky = "#89dceb",
+			sapphire = "#74c7ec",
+			blue = "#89b4fa",
+			lavender = "#b4befe",
+			text = "#cdd6f4",
+			subtext1 = "#bac2de",
+			surface0 = "#313244",
+			surface1 = "#45475a",
+			surface2 = "#585b70",
+			base = "#1e1e2e",
+			mantle = "#181825",
+			crust = "#11111b",
+		}
+
 		local my_lualine_theme = {
 			normal = {
-				a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
-				b = { bg = colors.bg, fg = colors.fg },
-				c = { bg = colors.bg, fg = colors.fg },
+				a = { bg = catppuccin_colors.blue, fg = catppuccin_colors.crust, gui = "bold" },
+				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
+				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
 			},
 			insert = {
-				a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-				b = { bg = colors.bg, fg = colors.fg },
-				c = { bg = colors.bg, fg = colors.fg },
+				a = { bg = catppuccin_colors.green, fg = catppuccin_colors.crust, gui = "bold" },
+				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
+				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
 			},
 			visual = {
-				a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
-				b = { bg = colors.bg, fg = colors.fg },
-				c = { bg = colors.bg, fg = colors.fg },
+				a = { bg = catppuccin_colors.mauve, fg = catppuccin_colors.crust, gui = "bold" },
+				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
+				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
 			},
 			command = {
-				a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
-				b = { bg = colors.bg, fg = colors.fg },
-				c = { bg = colors.bg, fg = colors.fg },
+				a = { bg = catppuccin_colors.peach, fg = catppuccin_colors.crust, gui = "bold" },
+				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
+				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
 			},
 			replace = {
-				a = { bg = colors.red, fg = colors.bg, gui = "bold" },
-				b = { bg = colors.bg, fg = colors.fg },
-				c = { bg = colors.bg, fg = colors.fg },
+				a = { bg = catppuccin_colors.red, fg = catppuccin_colors.crust, gui = "bold" },
+				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
+				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
 			},
 			inactive = {
-				a = { bg = colors.inactive_bg, fg = colors.semilightgray, gui = "bold" },
-				b = { bg = colors.inactive_bg, fg = colors.semilightgray },
-				c = { bg = colors.inactive_bg, fg = colors.semilightgray },
+				a = { bg = catppuccin_colors.surface1, fg = catppuccin_colors.subtext1, gui = "bold" },
+				b = { bg = catppuccin_colors.surface1, fg = catppuccin_colors.subtext1 },
+				c = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.subtext1 },
 			},
 		}
 
