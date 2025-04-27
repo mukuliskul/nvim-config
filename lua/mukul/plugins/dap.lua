@@ -88,19 +88,19 @@ return {
 			end, { noremap = true, silent = true, desc = "Set Conditional Breakpoint" })
 			vim.keymap.set(
 				"n",
-				"<leader>du",
+				"<leader>dv",
 				require("dapui").toggle,
 				{ noremap = true, silent = true, desc = "Toggle DAP UI" }
 			)
 			vim.keymap.set(
 				"n",
-				"<leader>dv",
+				"<leader>de",
 				require("dapui").eval,
 				{ noremap = true, silent = true, desc = "Evaluate Expression" }
 			)
 			vim.keymap.set(
 				"n",
-				"<leader>dt",
+				"<leader>dx",
 				require("dap").terminate,
 				{ noremap = true, silent = true, desc = "Terminate Debugger" }
 			)
