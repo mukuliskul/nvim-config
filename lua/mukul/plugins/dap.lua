@@ -104,12 +104,6 @@ return {
 				require("dap").terminate,
 				{ noremap = true, silent = true, desc = "Terminate Debugger" }
 			)
-			vim.keymap.set(
-				"n",
-				"<leader>dc",
-				require("dapui").close,
-				{ noremap = true, silent = true, desc = "Close DAP UI" }
-			)
 		end,
 	},
 }
