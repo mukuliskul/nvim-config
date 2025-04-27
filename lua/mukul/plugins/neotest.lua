@@ -10,7 +10,9 @@ return {
 	config = function()
 		require("neotest").setup({
 			adapters = {
-				require("neotest-python"),
+				require("neotest-python")({
+					dap = true, -- Enable dap integration with Neotest
+				}),
 			},
 		})
 
