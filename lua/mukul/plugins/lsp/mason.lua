@@ -44,6 +44,7 @@ return {
 				"tailwindcss",
 				"emmet_ls",
 				"yamlls",
+				"marksman",
 			},
 			automatic_installation = true,
 		})
