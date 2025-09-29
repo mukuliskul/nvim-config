@@ -11,10 +11,11 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 		local mason_tool_installer = require("mason-tool-installer")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-		local lspconfig = require("lspconfig")
 
+		-- Capabilities for completion support
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
+		-- Mason UI
 		mason.setup({
 			ui = {
 				icons = {
@@ -25,6 +26,7 @@ return {
 			},
 		})
 
+		-- Mason LSP servers
 		mason_lspconfig.setup({
 			ensure_installed = {
 				"ts_ls",
@@ -37,9 +39,10 @@ return {
 				"yamlls",
 				"marksman",
 			},
-			automatic_enable = true,
+			automatic_installation = true, -- Mason auto-enables servers
 		})
 
+		-- Extra tools (linters/formatters/etc.)
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"stylua",
@@ -48,22 +51,24 @@ return {
 			},
 		})
 
-		-- Optional manual configuration overrides
-		lspconfig["lua_ls"].setup({
+		-- =======================
+		-- LSP SERVER CONFIGS
+		-- =======================
+
+		-- Lua
+		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
 			settings = {
 				Lua = {
-					diagnostics = {
-						globals = { "vim" },
-					},
-					completion = {
-						callSnippet = "Replace",
-					},
+					diagnostics = { globals = { "vim" } },
+					completion = { callSnippet = "Replace" },
 				},
 			},
 		})
+		vim.lsp.enable("lua_ls")
 
-		lspconfig["pyright"].setup({
+		-- Python (Pyright)
+		vim.lsp.config("pyright", {
 			capabilities = capabilities,
 			settings = {
 				python = {
@@ -76,8 +81,10 @@ return {
 				},
 			},
 		})
+		vim.lsp.enable("pyright")
 
-		lspconfig["emmet_ls"].setup({
+		-- Emmet
+		vim.lsp.config("emmet_ls", {
 			capabilities = capabilities,
 			filetypes = {
 				"html",
@@ -90,5 +97,6 @@ return {
 				"svelte",
 			},
 		})
+		vim.lsp.enable("emmet_ls")
 	end,
 }
