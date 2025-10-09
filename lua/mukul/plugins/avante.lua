@@ -8,7 +8,9 @@ return {
 		instructions_file = "avante.md",
 		provider = "copilot",
 		providers = {
-			copilot = {}, -- ✅ nothing else needed, copilot.lua manages auth & models
+			copilot = {
+				model = "gpt-4.1",
+			},
 		},
 	},
 	dependencies = {
@@ -32,6 +34,7 @@ return {
 				require("copilot").setup({
 					suggestion = { enabled = true, auto_trigger = true },
 					panel = { enabled = true },
+					copilot_model = "gpt-4.1",
 				})
 			end,
 		},
