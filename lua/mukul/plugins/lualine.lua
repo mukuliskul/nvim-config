@@ -41,36 +41,54 @@ return {
 			crust = "#11111b",
 		}
 
+		-- Kanagawa colors
+		local kanagawa_colors = {
+			blue = "#5B82AA",
+			green = "#76946A",
+			violet = "#938AA9",
+			yellow = "#DCD7BA",
+			red = "#C34043",
+			fg = "#DCD7BA",
+			bg = "#1F1F28",
+			inactive_bg = "#16161D",
+			surface0 = "#2A2A37",
+			surface1 = "#363646",
+			surface2 = "#54546D",
+			crust = "#11111B",
+		}
+
+		local colors = kanagawa_colors
+
 		local my_lualine_theme = {
 			normal = {
-				a = { bg = catppuccin_colors.blue, fg = catppuccin_colors.crust, gui = "bold" },
-				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
-				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
+				a = { bg = colors.blue, fg = colors.crust, gui = "bold" },
+				b = { bg = colors.surface0, fg = colors.text },
+				c = { bg = colors.base, fg = colors.subtext1 },
 			},
 			insert = {
-				a = { bg = catppuccin_colors.green, fg = catppuccin_colors.crust, gui = "bold" },
-				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
-				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
+				a = { bg = colors.green, fg = colors.crust, gui = "bold" },
+				b = { bg = colors.surface0, fg = colors.text },
+				c = { bg = colors.base, fg = colors.subtext1 },
 			},
 			visual = {
-				a = { bg = catppuccin_colors.mauve, fg = catppuccin_colors.crust, gui = "bold" },
-				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
-				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
+				a = { bg = colors.mauve, fg = colors.crust, gui = "bold" },
+				b = { bg = colors.surface0, fg = colors.text },
+				c = { bg = colors.base, fg = colors.subtext1 },
 			},
 			command = {
-				a = { bg = catppuccin_colors.peach, fg = catppuccin_colors.crust, gui = "bold" },
-				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
-				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
+				a = { bg = colors.peach, fg = colors.crust, gui = "bold" },
+				b = { bg = colors.surface0, fg = colors.text },
+				c = { bg = colors.base, fg = colors.subtext1 },
 			},
 			replace = {
-				a = { bg = catppuccin_colors.red, fg = catppuccin_colors.crust, gui = "bold" },
-				b = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.text },
-				c = { bg = catppuccin_colors.base, fg = catppuccin_colors.subtext1 },
+				a = { bg = colors.red, fg = colors.crust, gui = "bold" },
+				b = { bg = colors.surface0, fg = colors.text },
+				c = { bg = colors.base, fg = colors.subtext1 },
 			},
 			inactive = {
-				a = { bg = catppuccin_colors.surface1, fg = catppuccin_colors.subtext1, gui = "bold" },
-				b = { bg = catppuccin_colors.surface1, fg = catppuccin_colors.subtext1 },
-				c = { bg = catppuccin_colors.surface0, fg = catppuccin_colors.subtext1 },
+				a = { bg = colors.surface1, fg = colors.subtext1, gui = "bold" },
+				b = { bg = colors.surface1, fg = colors.subtext1 },
+				c = { bg = colors.surface0, fg = colors.subtext1 },
 			},
 		}
 
