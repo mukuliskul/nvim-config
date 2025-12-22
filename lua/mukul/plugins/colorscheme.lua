@@ -5,10 +5,9 @@ return {
 		lazy = false,
 		priority = 1000,
 	},
-	-- Rosé Pine for light mode
+	-- GitHub theme for light mode
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"projekt0n/github-nvim-theme",
 		lazy = false,
 		priority = 1000,
 		config = function()
@@ -37,17 +36,23 @@ return {
 				},
 			})
 
-			-- 3. Setup Rosé Pine
-			require("rose-pine").setup({
-				variant = "dawn", -- dawn is the light theme (also: main, moon for dark)
-				-- You can customize more options here if needed
+			-- 3. Setup GitHub theme
+			require("github-theme").setup({
+				options = {
+					transparent = false,
+					styles = {
+						comments = "italic",
+						functions = "NONE",
+						keywords = "bold",
+					},
+				},
 			})
 
 			-- 4. Apply the colorscheme based on system mode
 			if mode == "dark" then
 				vim.cmd("colorscheme kanagawa")
 			else
-				vim.cmd("colorscheme rose-pine")
+				vim.cmd("colorscheme github_light")
 			end
 		end,
 	},

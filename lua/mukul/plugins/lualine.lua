@@ -20,24 +20,23 @@ return {
 
 		local mode = detect_system_mode()
 
-		-- Rosé Pine Dawn (light) colors
-		local rose_pine_dawn_colors = {
-			base = "#faf4ed",
-			surface = "#fffaf3",
-			overlay = "#f2e9e1",
-			muted = "#9893a5",
-			subtle = "#797593",
-			text = "#575279",
-			love = "#b4637a",
-			gold = "#ea9d34",
-			rose = "#d7827e",
-			pine = "#286983",
-			foam = "#56949f",
-			iris = "#907aa9",
-			highlight_low = "#f4ede8",
-			highlight_med = "#dfdad9",
-			highlight_high = "#cecacd",
-		}
+	-- GitHub Light colors
+	local github_light_colors = {
+		base = "#ffffff",
+		surface = "#f6f8fa",
+		overlay = "#eaeef2",
+		muted = "#57606a",
+		subtle = "#6e7781",
+		text = "#24292f",
+		blue = "#0969da",
+		green = "#1a7f37",
+		purple = "#8250df",
+		orange = "#bc4c00",
+		red = "#cf222e",
+		highlight_low = "#f6f8fa",
+		highlight_med = "#eaeef2",
+		highlight_high = "#d0d7de",
+	}
 
 		-- Kanagawa (dark) colors
 		local kanagawa_colors = {
@@ -56,8 +55,8 @@ return {
 			crust = "#16161D",
 		}
 
-		-- Select colors based on mode
-		local colors = mode == "dark" and kanagawa_colors or rose_pine_dawn_colors
+	-- Select colors based on mode
+	local colors = mode == "dark" and kanagawa_colors or github_light_colors
 
 		-- Create theme based on selected colors
 		local my_lualine_theme
@@ -96,41 +95,41 @@ return {
 					c = { bg = colors.surface0, fg = colors.subtext1 },
 				},
 			}
-		else
-			-- Rosé Pine Dawn theme
-			my_lualine_theme = {
-				normal = {
-					a = { bg = colors.pine, fg = colors.base, gui = "bold" },
-					b = { bg = colors.overlay, fg = colors.text },
-					c = { bg = colors.surface, fg = colors.subtle },
-				},
-				insert = {
-					a = { bg = colors.foam, fg = colors.base, gui = "bold" },
-					b = { bg = colors.overlay, fg = colors.text },
-					c = { bg = colors.surface, fg = colors.subtle },
-				},
-				visual = {
-					a = { bg = colors.iris, fg = colors.base, gui = "bold" },
-					b = { bg = colors.overlay, fg = colors.text },
-					c = { bg = colors.surface, fg = colors.subtle },
-				},
-				command = {
-					a = { bg = colors.gold, fg = colors.base, gui = "bold" },
-					b = { bg = colors.overlay, fg = colors.text },
-					c = { bg = colors.surface, fg = colors.subtle },
-				},
-				replace = {
-					a = { bg = colors.love, fg = colors.base, gui = "bold" },
-					b = { bg = colors.overlay, fg = colors.text },
-					c = { bg = colors.surface, fg = colors.subtle },
-				},
-				inactive = {
-					a = { bg = colors.highlight_med, fg = colors.muted, gui = "bold" },
-					b = { bg = colors.highlight_med, fg = colors.muted },
-					c = { bg = colors.highlight_low, fg = colors.muted },
-				},
-			}
-		end
+	else
+		-- GitHub Light theme
+		my_lualine_theme = {
+			normal = {
+				a = { bg = colors.blue, fg = colors.base, gui = "bold" },
+				b = { bg = colors.overlay, fg = colors.text },
+				c = { bg = colors.surface, fg = colors.subtle },
+			},
+			insert = {
+				a = { bg = colors.green, fg = colors.base, gui = "bold" },
+				b = { bg = colors.overlay, fg = colors.text },
+				c = { bg = colors.surface, fg = colors.subtle },
+			},
+			visual = {
+				a = { bg = colors.purple, fg = colors.base, gui = "bold" },
+				b = { bg = colors.overlay, fg = colors.text },
+				c = { bg = colors.surface, fg = colors.subtle },
+			},
+			command = {
+				a = { bg = colors.orange, fg = colors.base, gui = "bold" },
+				b = { bg = colors.overlay, fg = colors.text },
+				c = { bg = colors.surface, fg = colors.subtle },
+			},
+			replace = {
+				a = { bg = colors.red, fg = colors.base, gui = "bold" },
+				b = { bg = colors.overlay, fg = colors.text },
+				c = { bg = colors.surface, fg = colors.subtle },
+			},
+			inactive = {
+				a = { bg = colors.highlight_med, fg = colors.muted, gui = "bold" },
+				b = { bg = colors.highlight_med, fg = colors.muted },
+				c = { bg = colors.highlight_low, fg = colors.muted },
+			},
+		}
+	end
 
 		-- configure lualine with modified theme
 		lualine.setup({
@@ -142,11 +141,11 @@ return {
 					{ "filename", path = 1 }, -- relative path
 				},
 				lualine_x = {
-					{
-						lazy_status.updates,
-						cond = lazy_status.has_updates,
-						color = { fg = mode == "dark" and "#FFA066" or "#ea9d34" },
-					},
+				{
+					lazy_status.updates,
+					cond = lazy_status.has_updates,
+					color = { fg = mode == "dark" and "#FFA066" or "#bc4c00" },
+				},
 					{ "encoding" },
 					{ "fileformat" },
 					{ "filetype" },
