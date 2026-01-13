@@ -1,6 +1,6 @@
 return {
 	"williamboman/mason.nvim",
-	event = { "VeryLazy" },
+	event = { "VimEnter" },
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -73,23 +73,16 @@ return {
 		-- Python (Pyright)
 		vim.lsp.config("pyright", {
 			capabilities = capabilities,
-			settings = function()
-				local python_path = vim.fn.getcwd() .. "/.venv/bin/python"
-				local settings = {
-					python = {
-						analysis = {
-							typeCheckingMode = "off",
-							autoSearchPaths = true,
-							useLibraryCodeForTypes = true,
-							diagnosticMode = "workspace",
-						},
+			settings = {
+				python = {
+					analysis = {
+						typeCheckingMode = "off",
+						autoSearchPaths = true,
+						useLibraryCodeForTypes = true,
+						diagnosticMode = "workspace",
 					},
-				}
-				if vim.fn.filereadable(python_path) == 1 then
-					settings.python.pythonPath = python_path
-				end
-				return settings
-			end,
+				},
+			},
 		})
 		vim.lsp.enable("pyright")
 

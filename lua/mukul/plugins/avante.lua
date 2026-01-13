@@ -36,6 +36,16 @@ return {
 					panel = { enabled = true },
 					copilot_model = "gpt-4.1",
 				})
+				
+				-- Configure copilot LSP client to use UTF-8 encoding
+				vim.api.nvim_create_autocmd("LspAttach", {
+					callback = function(args)
+						local client = vim.lsp.get_client_by_id(args.data.client_id)
+						if client and client.name == "copilot" then
+							client.offset_encoding = "utf-8"
+						end
+					end,
+				})
 			end,
 		},
 

@@ -6,6 +6,10 @@
 		auto_session.setup({
 			auto_restore_enabled = true,
 			auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
+			auto_session_enable_last_session = false, -- Don't automatically restore last session
+			cwd_change_handling = {
+				restore_upcoming_session = true, -- Restore session when changing to a directory with a session
+			},
 		})
 
 		-- Auto-save session every 5 minutes (300 seconds)
