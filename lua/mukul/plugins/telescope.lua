@@ -24,10 +24,9 @@ return {
 				},
 			},
 			pickers = {
-				-- find_files = {
-				-- 	hidden = true, -- Show hidden files (e.g., .github)
-				-- no_ignore = true, -- Also show files ignored by .gitignore
-				-- },
+				find_files = {
+					hidden = true, -- Show hidden files (e.g., .github)
+				},
 				-- live_grep = {
 				-- 	additional_args = function()
 				-- 		return { "--hidden" } -- Include hidden files in live grep

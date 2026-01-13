@@ -58,6 +58,11 @@ return {
 
 				opts.desc = "Restart LSP"
 				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
+
+				-- Enable inlay hints if supported
+				if vim.lsp.inlay_hint then
+					vim.lsp.inlay_hint.enable(true, { bufnr = ev.buf })
+				end
 			end,
 		})
 
@@ -70,17 +75,17 @@ return {
 				prefix = "●", -- Prefix for inline diagnostics, like a dot or other symbol
 				source = true, -- Show the source of the diagnostic (true to show it)
 			},
-			signs = true, -- Enable signs in the sign column (gutter)
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = "❌",
+					[vim.diagnostic.severity.WARN] = "⚠️",
+					[vim.diagnostic.severity.HINT] = "💡",
+					[vim.diagnostic.severity.INFO] = "ℹ️",
+				},
+			},
 			underline = true, -- Underline the text with diagnostics
 			update_in_insert = false, -- Disable updates in insert mode
 			severity_sort = true, -- Sort diagnostics by severity (error > warning > info > hint)
-			-- You can specify custom symbols for different diagnostic types here
-			diagnostic_config = {
-				Error = "❌",
-				Warn = "⚠️",
-				Hint = "💡",
-				Info = "ℹ️",
-			},
 		})
 	end,
 }

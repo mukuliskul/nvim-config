@@ -21,11 +21,7 @@ return {
 				lua = { "stylua" },
 				python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
 			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			},
+			-- Format on save disabled for manual control
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()

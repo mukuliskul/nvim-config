@@ -65,6 +65,10 @@ return {
 				Lua = {
 					diagnostics = { globals = { "vim" } },
 					completion = { callSnippet = "Replace" },
+					workspace = {
+						checkThirdParty = false, -- Prevent slow library checks
+						library = vim.api.nvim_get_runtime_file("", true),
+					},
 				},
 			},
 		})

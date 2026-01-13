@@ -46,3 +46,10 @@ opt.swapfile = false
 
 -- Enable autoread to detect external file changes
 opt.autoread = true
+
+-- Additional quality-of-life options
+opt.list = true -- show whitespace characters
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' } -- define whitespace characters
+opt.scrolloff = 8 -- keep 8 lines of context when scrolling
+opt.undofile = true -- enable persistent undo
+opt.updatetime = 300 -- faster completion and diagnostics

@@ -1,16 +1,17 @@
- return {
-	"rmagatti/auto-session",
-	config = function()
-		local auto_session = require("auto-session")
+	return {
+		"rmagatti/auto-session",
+		config = function()
+			local auto_session = require("auto-session")
 
-		auto_session.setup({
-			auto_restore_enabled = true,
-			auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
-			auto_session_enable_last_session = false, -- Don't automatically restore last session
-			cwd_change_handling = {
-				restore_upcoming_session = true, -- Restore session when changing to a directory with a session
-			},
-		})
+			auto_session.setup({
+				auto_restore = true,
+				auto_restore_last_session = false,
+				cwd_change_handling = true,
+				suppressed_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
+			})
+
+			-- Ensure sessionoptions includes 'localoptions' for proper filetype/highlighting restoration
+			vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 		-- Auto-save session every 5 minutes (300 seconds)
 		local auto_save_timer
