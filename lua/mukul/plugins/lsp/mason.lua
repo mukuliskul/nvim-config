@@ -1,12 +1,15 @@
 return {
 	"williamboman/mason.nvim",
-	event = { "BufEnter" },
+	event = { "VeryLazy" },
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"neovim/nvim-lspconfig",
 	},
 	config = function()
+		-- Ensure Mason's bin directory is in PATH
+		vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
+
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
 		local mason_tool_installer = require("mason-tool-installer")
