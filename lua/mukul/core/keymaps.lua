@@ -42,10 +42,6 @@ keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }
 keymap.set("n", "]c", "/#<CR>", { desc = "Go to next comment" })
 keymap.set("n", "[c", "?#<CR>", { desc = "Go to previous comment" })
 
--- window management enhancements
-keymap.set("n", "<leader>sj", "<cmd>resize -5<CR>", { desc = "Decrease window height" })
-keymap.set("n", "<leader>sk", "<cmd>resize +5<CR>", { desc = "Increase window height" })
-
 -- quickfix navigation
 keymap.set("n", "<leader>qn", "<cmd>cnext<CR>", { desc = "Go to next quickfix item" })
 keymap.set("n", "<leader>qp", "<cmd>cprev<CR>", { desc = "Go to previous quickfix item" })
