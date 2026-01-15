@@ -45,8 +45,6 @@ keymap.set("n", "[c", "?#<CR>", { desc = "Go to previous comment" })
 -- window management enhancements
 keymap.set("n", "<leader>sj", "<cmd>resize -5<CR>", { desc = "Decrease window height" })
 keymap.set("n", "<leader>sk", "<cmd>resize +5<CR>", { desc = "Increase window height" })
-keymap.set("n", "<leader>sh", "<cmd>vertical resize -5<CR>", { desc = "Decrease window width" })
-keymap.set("n", "<leader>sl", "<cmd>vertical resize +5<CR>", { desc = "Increase window width" })
 
 -- quickfix navigation
 keymap.set("n", "<leader>qn", "<cmd>cnext<CR>", { desc = "Go to next quickfix item" })
