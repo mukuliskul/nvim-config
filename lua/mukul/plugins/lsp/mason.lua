@@ -40,6 +40,7 @@ return {
 				"tailwindcss",
 				"emmet_ls",
 				"yamlls",
+				"jsonls",
 				"marksman",
 			},
 			automatic_installation = true, -- Mason auto-enables servers
@@ -50,6 +51,7 @@ return {
 			ensure_installed = {
 				"stylua",
 				"ruff",
+				"prettier",
 				"sonarlint-language-server",
 			},
 		})
@@ -105,5 +107,11 @@ return {
 			},
 		})
 		vim.lsp.enable("emmet_ls")
+
+		-- JSON
+		vim.lsp.config("jsonls", {
+			capabilities = capabilities,
+		})
+		vim.lsp.enable("jsonls")
 	end,
 }
