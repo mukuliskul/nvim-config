@@ -53,6 +53,7 @@ return {
 				"ruff",
 				"prettier",
 				"sonarlint-language-server",
+				"yamllint",
 			},
 		})
 
@@ -113,5 +114,11 @@ return {
 			capabilities = capabilities,
 		})
 		vim.lsp.enable("jsonls")
+
+		-- YAML
+		vim.lsp.config("yamlls", {
+			capabilities = capabilities,
+		})
+		vim.lsp.enable("yamlls")
 	end,
 }
